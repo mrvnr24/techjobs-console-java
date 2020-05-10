@@ -64,12 +64,16 @@ public class TechJobs {
                 if (searchField.equals("all")) {
 //                    System.out.println("Search all fields not yet implemented.");
                     printJobs(JobData.findByValue(searchTerm));
+                    if (!(JobData.findAll().contains(searchTerm))) {
+                        System.out.println("No Results");
+                    }
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
-                    if (!searchTerm.equals(searchField)) {
+                    if (!JobData.findAll(searchField).contains(searchTerm)) {
                         System.out.println("No Results");
                     }
                 }
+
             }
         }
     }
@@ -124,8 +128,6 @@ public class TechJobs {
                 }
                 System.out.println("*****\n");
             }
-
-        }
-
     }
+}
 

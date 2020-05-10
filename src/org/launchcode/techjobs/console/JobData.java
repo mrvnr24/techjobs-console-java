@@ -38,7 +38,6 @@ public class JobData {
 
         for (HashMap<String, String> row : allJobs) {
             String aValue = row.get(field);
-
             if (!values.contains(aValue)) {
                 values.add(aValue);
             }
@@ -130,7 +129,6 @@ public class JobData {
             ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
                 for (HashMap<String, String> row : allJobs) {
                     for (String column : row.keySet()) {
-//                        String value = row.get(column);
                         String aValue = row.get(column);
                         if (aValue.contains(value)) {
                             jobs.add(row);
